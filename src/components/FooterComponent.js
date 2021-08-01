@@ -2,13 +2,13 @@ import React from 'react';
 
 function Footer() {
     return (
-        <>
+        <div className="footer">
           <center>
-            Lingr - microblogging for language learners
+            <h4>Lingr - microblogging for language learners</h4>
             <br />
-            Facebook | Twitter
+            <h5>Facebook | Twitter</h5>
           </center>
-        </>
+        </div>
     )
 }
 

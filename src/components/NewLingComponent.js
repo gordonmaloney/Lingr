@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 function NewLingComponent() {
     return (
@@ -16,6 +16,7 @@ function NewLingComponent() {
                     <option>Relaxed - only correct more significant mistakes</option>
                     <option>Chill - please don't correct me</option>
                 </Input>
+                <Button>submit</Button>
             </FormGroup>
         </Form>
 

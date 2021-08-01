@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return addLing(this)">
+        <input type="text" id="nameinput" name="name" placeholder="name"></input><br>
+        <input type="text" id="linginput" name="ling" placeholder="ling"></input><br>
+        <input type="submit" value="Add item">
+        <input type="button" value="Show list" onclick="console.log(myArray)">    
+      </form>
+        
+      <p id="my-array"> 
+
+    <script>
+        const myArray = [{
+            name: "gordon",
+            ling: "egfbunhb"
+        },
+        {
+            name: "mike",
+            ling: "rfbherb"
+        },
+        {
+            name: "james",
+            ling: "rbbbbbbb"
+        },
+    ]
+
+    function displayArray() {
+        myArray.map(array => {
+            console.log("name: " + array.name)
+            console.log("ling: " + array.ling)
+        })
+    }
+
+
+        function addLing(a) {
+        event.preventDefault();
+        myArray.push({name: a.nameinput.value, ling: a.linginput.value, replies: []})
+        displayArray()
+    }
+    </script>
+</body>
+</html>

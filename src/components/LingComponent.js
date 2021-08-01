@@ -17,9 +17,8 @@ function Ling(props) {
                     {ling.lingBody}
                 </CardBody>
                 <CardFooter>
-                    <a href="#">{ling.lingReplies} Replies</a> |
-                    <a href="#">{ling.lingCorrections} Corrections</a> |
-                    <a href="#">{ling.lingShares} Shares</a>
+                    <Link to={`/reply/${ling.id}`}>{ling.lingRepliesObj.filter(reply => reply.replyType === "reply").length} Replies</Link> | 
+                    <Link to={`/reply/${ling.id}`}> {ling.lingRepliesObj.filter(reply => reply.replyType === "correction").length} Corrections</Link>
                     <span className="ling-date">
                         {ling.lingDate}
                     </span>

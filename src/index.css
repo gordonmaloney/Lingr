@@ -29,3 +29,46 @@
 .show {
   display: block inline
 }
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+
+h1, h2, h3, h4, h5, .card, Button, body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.reply-ling {
+  width: 95%;
+  margin-left: auto;
+}
+
+body {
+  background-image: url('images/so-white.png');
+}
+
+.footer {
+  background-color: aliceblue;
+}
+
+.replySignOff {
+  background-color: aliceblue;
+}
+
+.correction {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  float: right;
+  background-color: red;
+  margin-right: -15px;
+  margin-top: -15px;
+}
+
+.reply {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  float: right;
+  background-color: green;
+  margin-right: -15px;
+  margin-top: -15px;
+}

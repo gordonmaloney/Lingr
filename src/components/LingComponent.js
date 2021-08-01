@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardHeader, CardBody, CardFooter } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 function Ling(props) {
     const LingsList = props.lings.map(ling => {
@@ -24,7 +25,10 @@ function Ling(props) {
                     </span>
                 </CardFooter>
                 <CardBody className="ling-reply">
+                <Link to={`/reply/${ling.id}`}>
+
                     <input className="ling-reply" type="text" placeholder="Type your reply or correction here..." />
+                </Link>
                 </CardBody>
             </Card>
         </div>

@@ -22,6 +22,10 @@ render() {
             <Link to="/">
               <NewLingModal />
             </Link>
+            <Link to="/"> 
+              <Button color="primary" className="menu-btn">Timeline</Button>
+            </Link>
+            <br />
             <Link to="/notifications"> 
               <Button color="primary" className="menu-btn">Notifications</Button>
             </Link>

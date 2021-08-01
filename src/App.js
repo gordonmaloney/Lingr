@@ -6,7 +6,9 @@ import Header from './components/HeaderComponent';
 import Footer from './components/FooterComponent';
 import Notifications from './components/NotificationsComponent';
 import Profile from './components/ProfileComponent';
+import LingReply from './components/LingReply';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
                 <Route exact path="/"><Timeline /></Route>
                 <Route exact path="/notifications"><Notifications /></Route>
                 <Route exact path="/profile"><Profile /></Route>
+                <Route path="/reply/:id" component={LingReply} />
                 <Route path="/"><Timeline /></Route>
               </Switch>
             </Col>

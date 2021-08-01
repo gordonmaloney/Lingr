@@ -1,26 +1,46 @@
 import React from "react";
 import { Button } from 'reactstrap';
+import NewLingModal from './NewLingModal';
+import { Link } from 'react-router-dom';
 
-function Menu() {
-let userLoggedIn = true;
+class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLogInOutClick = this.handleLogInOutClick.bind(this);
+    this.state = {isLoggedIn: true};
+  }
 
-  if (userLoggedIn) {
-  return (
-    <>
-          <Button color="primary" className="menu-btn">New Ling</Button>
-          <br />
-          <Button color="primary" className="menu-btn">Notifications</Button>
-          <br />
-          <Button color="primary" className="menu-btn">Profile</Button>
-          <br />
-          <Button color="primary" className="menu-btn">Log-out</Button>
-    </>
-  );} else {
+  handleLogInOutClick() {
+    this.setState({isLoggedIn: !this.state.isLoggedIn});
+  }
+
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  if (isLoggedIn === true) {
     return (
       <>
-        <Button color="primary" className="menu-btn">Log-in</Button>
+            <Link to="/">
+              <NewLingModal />
+            </Link>
+            <Link to="/notifications"> 
+              <Button color="primary" className="menu-btn">Notifications</Button>
+            </Link>
+            <br />
+            <Link to="/profile"> 
+              <Button color="primary" className="menu-btn">Profile</Button>
+            </Link>
+            <br />
+            <Link to="/">
+              <Button color="primary" className="menu-btn" onClick={this.handleLogInOutClick}>Log-out</Button>
+            </Link>
       </>
-    )
+    );} else {
+      return (
+        <>
+          <Button color="primary" className="menu-btn" onClick={this.handleLogInOutClick}>Log-in</Button>
+        </>
+      )
+    }
   }
 }
 

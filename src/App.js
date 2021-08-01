@@ -4,22 +4,32 @@ import Menu from './components/MenuComponent';
 import Timeline from './components/TimelineComponent';
 import Header from './components/HeaderComponent';
 import Footer from './components/FooterComponent';
+import Notifications from './components/NotificationsComponent';
+import Profile from './components/ProfileComponent';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Container>
-        <Header />
-        <Row>
-          <Col sm="3">
-            <Menu />
-          </Col>
-          <Col sm="9">
-            <Timeline />
-          </Col>
-        </Row>     
-        <Footer />
-      </Container>
+      <BrowserRouter>
+        <Container>
+          <Header />
+          <Row>
+            <Col sm="3">
+              <Menu />
+            </Col>
+            <Col sm="9">
+              <Switch>
+                <Route exact path="/"><Timeline /></Route>
+                <Route exact path="/notifications"><Notifications /></Route>
+                <Route exact path="/profile"><Profile /></Route>
+                <Route path="/"><Timeline /></Route>
+              </Switch>
+            </Col>
+          </Row>     
+          <Footer />
+        </Container>
+      </BrowserRouter>
     </>
   );
 }

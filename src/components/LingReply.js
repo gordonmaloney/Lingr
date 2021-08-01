@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function ReplyCorrect(lingCorrect) {
     console.log(lingCorrect)
-    const [reply, correct] = useState("correct");
+    const [reply, correct] = useState("reply");
 
     const toggle = () => {
         if (reply === "reply") {

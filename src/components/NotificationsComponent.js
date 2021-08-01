@@ -3,7 +3,9 @@ import React from 'react';
 function Notifications() {
     return (
         <>
-            notifications page...
+            <center>
+                <h5>You have no new notifications at the moment...</h5>
+            </center>
         </>
     )
 }

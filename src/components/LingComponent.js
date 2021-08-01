@@ -26,7 +26,6 @@ function Ling(props) {
                 </CardFooter>
                 <CardBody className="ling-reply">
                 <Link to={`/reply/${ling.id}`}>
-
                     <input className="ling-reply" type="text" placeholder="Type your reply or correction here..." />
                 </Link>
                 </CardBody>

@@ -16,32 +16,32 @@ class Menu extends React.Component {
 
 render() {
   const isLoggedIn = this.state.isLoggedIn;
-  if (isLoggedIn === false) {
+  if (isLoggedIn === true) {
     return (
       <>
             <Link to="/">
               <NewLingModal />
             </Link>
             <Link to="/"> 
-              <Button color="primary" className="menu-btn">Timeline</Button>
+              <Button color="primary" className="menu-btn" outline>Timeline</Button>
             </Link>
             <br />
             <Link to="/notifications"> 
-              <Button color="primary" className="menu-btn">Notifications</Button>
+              <Button color="primary" className="menu-btn" outline>Notifications</Button>
             </Link>
             <br />
             <Link to="/profile"> 
-              <Button color="primary" className="menu-btn">Profile</Button>
+              <Button color="primary" className="menu-btn" outline>Profile</Button>
             </Link>
             <br />
             <Link to="/">
-              <Button color="primary" className="menu-btn" onClick={this.handleLogInOutClick}>Log-out</Button>
+              <Button color="primary" className="menu-btn" outline onClick={this.handleLogInOutClick}>Log-out</Button>
             </Link>
       </>
     );} else {
       return (
         <>
-          <Button color="primary" className="menu-btn" onClick={this.handleLogInOutClick}>Log-in</Button>
+          <Button color="primary" className="menu-btn" outline onClick={this.handleLogInOutClick}>Log-in</Button>
         </>
       )
     }

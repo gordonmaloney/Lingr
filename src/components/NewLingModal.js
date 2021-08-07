@@ -8,15 +8,15 @@ const NewLingModal = (props) => {
 
   return (
     <div>
-      <Button color="primary" onClick={toggle} className="menu-btn">New Ling</Button>
+      <Button color="primary" onClick={toggle} outline className="menu-btn">New Ling</Button>
       <Modal isOpen={modal} toggle={toggle} className="new-ling-modal">
         <ModalHeader toggle={toggle}>New Ling</ModalHeader>
         <ModalBody>
             <NewLingComponent />
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Post Ling</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button color="primary" onClick={toggle} outline>Post Ling</Button>{' '}
+          <Button color="secondary" onClick={toggle} outline>Cancel</Button>
         </ModalFooter>
       </Modal>
     </div>

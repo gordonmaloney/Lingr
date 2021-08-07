@@ -4,14 +4,14 @@ export const LINGS = [
         userIcon: "😎",
         userName: "Gordon Maloney",
         lingBody: "Abair latha a th' ann andiugh! 'S mi a tha teth!",
-        lingShares: 0,
         lingDate: "16:53, 26/07/2021",
         lingLang: "Scottish Gaelic",
         lingRepliesObj: [{
             replyId: 0,
             replyAuthor: "Mike Williamson",
             replyType: "correction",
-            replyBody: "abair latha a th' ann AN-DIUGH",
+            correctionBody: "abair latha a th' ann AN-DIUGH",
+            replyBody: "don't forget the dashes!"
         },
         {
             replyId: 1,
@@ -25,7 +25,6 @@ export const LINGS = [
         userIcon: "🥳",
         userName: "Kirsty Haigh",
         lingBody: "Was fur ein schöner Tag!",
-        lingShares: 1,
         lingDate: "12:31, 25/07/2021",
         lingLang: "German",
         lingRepliesObj: [{
@@ -38,7 +37,8 @@ export const LINGS = [
             replyId: 1,
             replyAuthor: "Gordon Maloney",
             replyType: "correction",
-            replyBody: "fÜr"
+            replyBody: "don't forget your umlauts!",
+            correctionBody: "fÜr"
         }]
     },
     {
@@ -46,7 +46,6 @@ export const LINGS = [
         userIcon: "😋",
         userName: "James McAsh",
         lingBody: "Vaya que día hoy!",
-        lingShares: 0,
         lingDate: "11:46, 22/07/2021",
         lingLang: "Spanish",
         lingRepliesObj: []
@@ -55,8 +54,7 @@ export const LINGS = [
         id: 3,
         userIcon: "🤔",
         userName: "Mike Williamson",
-        lingBody: "Não posso acreditar que a tenda não tinha pasteis de nata!!",
-        lingShares: 3,
+        lingBody: "Não posso acreditar que a loja não tinha pasteis de nata!!",
         lingDate: "21:04, 18/07/2021",
         lingLang: "Portuguese",
         lingRepliesObj: [{
@@ -77,6 +75,43 @@ export const LINGS = [
             replyType: "reply",
             replyBody: "that's so true!"
         }]
+    },    
+    {
+        id: 4,
+        userIcon: "👻",
+        userName: "Jenny Lester",
+        lingBody: "Oh a thì, 's mi a tha fuar!",
+        lingDate: "14:52, 15/07/2021",
+        lingLang: "Scottish Gaelic",
+        lingRepliesObj: [{
+            replyId: 0,
+            replyAuthor: "Gordon Maloney",
+            replyType: "reply",
+            replyBody: "oh a dhuine, tha agus mise!"
+        },
+        ]
+    },
+    {
+        id: 5,
+        userIcon: "😎",
+        userName: "Gordon Maloney",
+        lingBody: "Man, hab' ich Hunger! Ich will essen etwas",
+        lingDate: "11:24, 15/07/2021",
+        lingLang: "German",
+        lingRepliesObj: [{
+            replyId: 0,
+            replyAuthor: "Mike Williamson",
+            replyType: "reply",
+            replyBody: "oje! Dann sollst du was mal essen!"
+        },
+        {
+            replyId: 0,
+            replyAuthor: "Kirsty Haigh",
+            replyType: "correction",
+            correctionBody: "ich will etwas essen",
+            replyBody: `I think you should've written "ich will etwas essen" < you need to swap the verb and the object around.`
+        },
+        ]
     },
 ];
 

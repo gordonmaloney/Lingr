@@ -72,3 +72,8 @@ body {
   margin-right: -15px;
   margin-top: -15px;
 }
+
+.correction-body {
+  background-color: aliceblue;
+  padding: 3%;
+}

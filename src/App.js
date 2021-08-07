@@ -30,7 +30,7 @@ function App() {
               </Switch>
             </Col>
           </Row>     
-          <Footer />
+          <Footer className="mt-5" />
         </Container>
       </BrowserRouter>
     </>

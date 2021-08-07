@@ -45,7 +45,7 @@ function Profile() {
                             <Col>
                                 <Link to="/">
                                     <center>
-                                        <Button className="mt-3" color="primary" >Save</Button>
+                                        <Button className="mt-3" color="primary" outline>Save</Button>
                                     </center>
                                 </Link> 
                             </Col>

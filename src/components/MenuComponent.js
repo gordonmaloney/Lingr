@@ -16,7 +16,7 @@ class Menu extends React.Component {
 
 render() {
   const isLoggedIn = this.state.isLoggedIn;
-  if (isLoggedIn === true) {
+  if (isLoggedIn === false) {
     return (
       <>
             <Link to="/">

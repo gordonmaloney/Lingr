@@ -61,9 +61,20 @@ body {
   background-color: red;
   margin-right: -15px;
   margin-top: -15px;
+  color: white;
+
 }
 
-.reply {
+.correction:after{
+  text-align: center;
+  font-size: larger;
+  font-weight: 800;
+  content: '!';
+  margin-left: 7.5px;
+  line-height: 0%;
+}
+
+/*.reply {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -71,7 +82,7 @@ body {
   background-color: green;
   margin-right: -15px;
   margin-top: -15px;
-}
+}*/
 
 .correction-body {
   background-color: aliceblue;

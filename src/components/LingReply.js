@@ -46,7 +46,7 @@ function Replies(props) {
             <CardBody>
               <div className={reply.replyType} />
               <p className="ml-3 mb-3 correction-body">
-                <i>"{reply.correctionBody}"</i>
+                <i>{reply.correctionBody}</i>
               </p>
               {reply.replyBody}
             </CardBody>

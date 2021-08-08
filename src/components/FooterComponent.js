@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className="footer">
+        <div className="footer border-top py-2">
           <center>
             <h4>Lingr - microblogging for language learners</h4>
             <br />

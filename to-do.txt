@@ -1,10 +1,16 @@
+//add language filter to timeline
+//change reply format to show both boxes
+//change correction display, red dot and italics
 //migrate ling data to redux
 //migrate new ling form to redux
 //fix modal closing buttons for new ling form
 //fix reply pre-fill
+//make layout responsive
 
 
 make new ling form successfully push a new ling to state
+
+add form validation
 make ling reply work
 create log-in page
 display correction preference on lings

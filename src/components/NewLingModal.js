@@ -9,7 +9,7 @@ const NewLingModal = (props) => {
   return (
     <div>
       <Button color="primary" onClick={toggle} outline className="menu-btn">
-        New Ling
+      💭<span className="d-inline d-sm-none d-md-inline"> New Ling</span>
       </Button>
       <Modal isOpen={modal} toggle={toggle} className="new-ling-modal">
         <ModalHeader toggle={toggle}>New Ling</ModalHeader>

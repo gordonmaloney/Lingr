@@ -8,6 +8,7 @@ import Notifications from './components/NotificationsComponent';
 import Profile from './components/ProfileComponent';
 import LingReply from './components/LingReply';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import About from './components/About';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route exact path="/notifications"><Notifications /></Route>
                 <Route exact path="/profile"><Profile /></Route>
                 <Route path="/reply/:id" component={LingReply} />
+                <Route path="/about"> <About /> </Route>
                 <Route path="/"><Timeline /></Route>
               </Switch>
             </Col>

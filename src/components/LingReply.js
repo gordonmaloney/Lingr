@@ -16,30 +16,36 @@ function ReplyCorrect(lingCorrect) {
   return (
     <>
       <div>
-        <Button onClick={() => toggle()}>Correction</Button>
+        <Button
+          className={reply === "correct" ? "hide" : "show"}
+          onClick={() => toggle()}
+        >
+          Add Correction
+        </Button>
         <div className={reply === "correct" ? "show" : "hide"}>
+          <Button onClick={() => toggle()}>Cancel Correction</Button>
 
+          <span className="d-inline"> <i>Protip: Make corrections in CAPITALS so folk can see where they went wrong</i></span>
 
-        <input
-          className="ling-reply my-2"
-          type="text"
-          defaultValue={lingCorrect.content}
-        />
-      </div>
+          <input
+            className="ling-reply my-2"
+            type="text"
+            defaultValue={lingCorrect.content}
+          />
+        </div>
         <input
           className="ling-reply my-2"
           type="text"
           placeholder="Type your reply here..."
         />
       </div>
-
     </>
   );
 }
 
 function Replies(props) {
   const LingReplies = props.ling.lingRepliesObj.map((reply) => {
-    if ((reply.replyType === "correction")) {
+    if (reply.replyType === "correction") {
       return (
         <div key={reply.replyId}>
           <Card className="mb-3 reply-ling">

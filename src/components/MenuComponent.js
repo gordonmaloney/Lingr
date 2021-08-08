@@ -64,16 +64,27 @@ class Menu extends React.Component {
     } else {
       return (
         <>
-          <Col xs="2" sm="12">
-            <Button
-              color="primary"
-              className="menu-btn"
-              outline
-              onClick={this.handleLogInOutClick}
-            >
-              ▶️<span className="d-none d-sm-inline"> Log-in</span>
-            </Button>
-          </Col>
+          <Row className="mb-3">
+            <Col xs="6" sm="12">
+              <Link to="/about">
+                <Button color="primary" className="menu-btn" outline>
+                  ❓
+                  <span className="d-inline d-sm-none d-md-inline"> About</span>
+                </Button>
+              </Link>
+            </Col>
+            <Col xs="6" sm="12">
+              <Button
+                color="primary"
+                className="menu-btn"
+                outline
+                onClick={this.handleLogInOutClick}
+              >
+                ▶️
+                <span className="d-inline d-sm-none d-md-inline"> Log-in</span>
+              </Button>
+            </Col>
+          </Row>
         </>
       );
     }

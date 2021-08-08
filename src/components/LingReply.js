@@ -23,7 +23,7 @@ function ReplyCorrect(lingCorrect) {
         <input
           className="ling-reply my-2"
           type="text"
-          placeholder={lingCorrect.content}
+          defaultValue={lingCorrect.content}
         />
       </div>
         <input

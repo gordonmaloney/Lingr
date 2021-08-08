@@ -1,6 +1,8 @@
 //migrate ling data to redux
 //migrate new ling form to redux
 //fix modal closing buttons for new ling form
+//fix reply pre-fill
+
 
 make new ling form successfully push a new ling to state
 make ling reply work

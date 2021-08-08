@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 function Footer() {
     return (
@@ -6,7 +7,13 @@ function Footer() {
           <center>
             <h4>Lingr - microblogging for language learners</h4>
             <br />
-            <h5>Facebook | Twitter</h5>
+            <h5>
+            <Link to="/about">
+About</Link> 
+{" "}|{" "}
+<a href="https://www.facebook.com/" target="_blank">Facebook</a>
+{" "}|{" "} 
+<a href="https://twitter.com/" target="_blank">Twitter</a></h5>
           </center>
         </div>
     )

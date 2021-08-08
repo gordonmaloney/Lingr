@@ -1,0 +1,13 @@
+//migrate ling data to redux
+//migrate new ling form to redux
+//fix modal closing buttons for new ling form
+
+make new ling form successfully push a new ling to state
+make ling reply work
+create log-in page
+display correction preference on lings
+tidy up ling reply page UX
+migrate profile form to redux
+store profile form data in state, make form update it
+make notification page show all replies/corrections to user's lings
+deploy somewhere

@@ -18,7 +18,7 @@ function App() {
         <Container>
           <Header />
           <Row>
-            <Col sm="3">
+            <Col sm="2" md="3">
               <Menu />
             </Col>
             <Col sm="9">

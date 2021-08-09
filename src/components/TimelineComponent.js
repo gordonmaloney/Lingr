@@ -41,7 +41,6 @@ class Timeline extends Component {
               
             </CardHeader>
           </Card>
-
           <Ling lings={this.state.lings} lang={this.state.filterLang} />
       </>
     );

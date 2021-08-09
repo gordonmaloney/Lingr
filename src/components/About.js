@@ -1,20 +1,57 @@
-import React from 'react';
-import {Form, FormGroup, Label, Button, Input, Container, Row, Col} from 'reactstrap'
-import { Link } from 'react-router-dom';
+import React, { Component, useState } from "react";
+import {
+  Form,
+  FormGroup,
+  Label,
+  Button,
+  Input,
+  Container,
+  Row,
+  Col,
+  Collapse,
+} from "reactstrap";
+import { Link } from "react-router-dom";
 
-function About() {
-    return (
-        <>
-            <center>
-                <h5 className="mt-5 mb-5">Lingr is a microblogging site for language learners.</h5>
-            </center>
-            <p>Sometimes you don't want to write out a whole long essay, but you still want to practice. Maybe you've just learned a new grammatical structure that you want to practice. Then this is for you.</p>
-            <p>You can share short messages, and friendly native speakers can correct your mistakes - but you can even say how strict you'd like them to be, so don't worry about people jumping down your throat if you just want a bit of fun.</p>
-            <p>Lingr is built using React, Redux and Reactstrap. If you have ideas for new features or would like to help with development, <i>by all means</i> be in touch!</p>
-            <p>The site is free to use, but if you'd like to support it then at some point I should maybe set up a Patreon or something so that you're able to lol.</p>
-        </>
-    )
-}
+const About = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggle = () => setIsOpen(!isOpen);
 
-export default About
+  return (
+    <div>
+      <>
+        <center>
+          <h5 className="mt-5 mb-5">
+            <i>Lingr is a microblogging site for language learners.</i>
+          </h5>
+        </center>
+        <p>
+          Sometimes you <b>don't want to write out a whole long essay</b>, but you
+          still want to practice. Maybe you've just learned a new grammatical
+          structure that you want to practice. <b>Then this is for you.</b>
+        </p>
+        <p>
+          You can share short messages, and <b>friendly native speakers</b> can correct
+          your mistakes - but you can even say how strict you'd like them to be,
+          so don't worry about people jumping down your throat if you <b>just want
+          a bit of fun.</b>
+        </p>
+        <p>
+          The site is <b>free to use</b>, but if you'd like to support it then at some
+          point I should maybe set up a Patreon or something so that you're able
+          to lol.
+        </p>
+      </>
+      <span className="fake-link" color="primary" onClick={toggle} style={{ marginBottom: "1rem" }}>
+        The technical details...
+      </span>
+      <Collapse isOpen={isOpen}>
+        Lingr is built using React, React Router, Redux and Reactstrap. If you have ideas for
+        new features or would like to help with development, <i>by all means</i>{" "}
+        be in touch!
+      </Collapse>
+    </div>
+  );
+};
+
+export default About;

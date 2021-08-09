@@ -88,3 +88,25 @@ body {
   background-color: aliceblue;
   padding: 3%;
 }
+
+.fake-link {
+  color: darkcyan;
+  text-decoration: underline;
+}
+
+.fake-link:hover {
+  color: black;
+}
+
+.loader {
+  font-size: xx-large;
+  text-align: center;
+  animation: loadspin 2s infinite;
+  width: auto;
+}
+
+@keyframes loadspin {
+  0%   {transform: rotate(0deg);}
+  75%  {transform: rotate(360deg);}
+  100% {transform: rotate(360deg);}
+}

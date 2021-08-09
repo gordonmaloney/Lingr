@@ -4,10 +4,11 @@ import NewLingModal from "./NewLingModal";
 import { Link } from "react-router-dom";
 
 class Menu extends React.Component {
-  constructor(props) {
+  constructor(props, postLing) {
     super(props);
     this.handleLogInOutClick = this.handleLogInOutClick.bind(this);
     this.state = { isLoggedIn: true };
+    this.postLing = postLing
   }
 
   handleLogInOutClick() {
@@ -22,7 +23,7 @@ class Menu extends React.Component {
           <Row className="mb-3">
             <Col xs="4" sm="12">
               <Link to="/">
-                <NewLingModal />
+                <NewLingModal postLing={this.postLing} />
               </Link>
             </Col>
             <Col xs="2" sm="12">

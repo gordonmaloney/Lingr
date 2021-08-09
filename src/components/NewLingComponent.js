@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import { Label, Input, Row, Button, ModalBody } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 
+import { connect } from "react-redux";
+import { postLing } from './actions/newLingAction'
+
+const mapDispatchToProps = dispatch => ({
+  onClick: () => dispatch(postLing())
+})
+
+
 class NewLingComponent extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +31,11 @@ class NewLingComponent extends Component {
   handleSubmit(values) {
     console.log("Current state is: " + JSON.stringify(values));
     alert("Current state is: " + JSON.stringify(values));
+    postLing(
+      values.newLingBody,
+      values.newLingLang,
+      values.newLingCorPref
+    );
   }
 
   render() {
@@ -102,4 +115,11 @@ class NewLingComponent extends Component {
   }
 }
 
-export default NewLingComponent;
+const mapStateToProps = (state) => {
+  return {
+    lings: state.lings,
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewLingComponent);

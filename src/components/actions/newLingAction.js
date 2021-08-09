@@ -1,7 +1,7 @@
-export const newLing = (user) => {
+export const postLing = (ling) => {
     console.log("You created a new ling");
     return {
         type: "NEW_LING",
-        payload: newLingBody
+        payload: ling
     }
 };

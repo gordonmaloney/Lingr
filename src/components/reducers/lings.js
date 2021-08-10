@@ -3,7 +3,7 @@ function LingsReducer() {
     {
       id: 0,
       userIcon: "😎",
-      userName: "Gordon Maloney",
+      userName: "REDUX",
       lingBody: "Abair latha a th' ann andiugh! 'S mi a tha teth!",
       lingDate: "16:53, 26/07/2021",
       lingLang: "Scottish Gaelic",

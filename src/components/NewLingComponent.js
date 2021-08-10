@@ -1,14 +1,20 @@
 import React, { Component } from "react";
-import { Label, Input, Row, Button, ModalBody } from "reactstrap";
+import { Label, Row, Button, ModalBody } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 
 import { connect } from "react-redux";
 import { postLing } from './actions/newLingAction'
+import { addLing } from './actions/ActionCreators';
 
+/*
 const mapDispatchToProps = dispatch => ({
   onClick: () => dispatch(postLing())
 })
+*/
 
+const mapDispatchToProps = {
+  addLing: (newLingBody, newLingLang) => (addLing(newLingBody, newLingLang)),
+}
 
 class NewLingComponent extends Component {
   constructor(props) {

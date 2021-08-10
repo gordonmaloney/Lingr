@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Modal, ModalHeader } from "reactstrap";
 import NewLingComponent from "./NewLingComponent.js";
 
 
@@ -19,12 +19,6 @@ const NewLingModal = (props, postLing) => {
       </Modal>
     </div>
   );
-};
-
-const mapStateToProps = (state) => {
-  return {
-    lings: state.lings,
-  };
 };
 
 export default NewLingModal;

@@ -1,16 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import {
-  Form,
-  FormGroup,
-  Label,
-  Button,
-  Input,
-  Container,
-  Row,
-  Col,
   Collapse,
 } from "reactstrap";
-import { Link } from "react-router-dom";
 
 const About = (props) => {
   const [isOpen, setIsOpen] = useState(false);

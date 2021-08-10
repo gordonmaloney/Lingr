@@ -1,0 +1,1 @@
+export const POST_LING = 'POST_LING';

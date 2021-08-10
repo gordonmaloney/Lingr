@@ -19,6 +19,7 @@ class Timeline extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <>
           <Card className="mb-3">

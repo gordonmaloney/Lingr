@@ -11,9 +11,9 @@ function Footer() {
             <Link to="/about">
 About</Link> 
 {" "}|{" "}
-<a href="https://www.facebook.com/" target="_blank">Facebook</a>
+<a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
 {" "}|{" "} 
-<a href="https://twitter.com/" target="_blank">Twitter</a></h5>
+<a href="https://twitter.com/" target="_blank" rel="noreferrer">Twitter</a></h5>
           </center>
         </div>
     )

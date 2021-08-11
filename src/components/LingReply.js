@@ -1,7 +1,8 @@
 import React, { Component, useState } from "react";
 import { Card, CardHeader, CardBody, CardFooter, Button } from "reactstrap";
-import { LINGS } from "./Lings";
+//import { LINGS } from "./Lings";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 function ReplyCorrect(lingCorrect) {
   const [reply, correct] = useState("reply");
@@ -83,7 +84,7 @@ function Replies(props) {
 
 class LingReply extends Component {
   render() {
-    const ling = LINGS[this.props.match.params.id];
+    const ling = this.props.lings.lings[this.props.match.params.id];
     return (
       <div key={ling.id}>
         <Card className="ling mb-3">
@@ -110,4 +111,10 @@ class LingReply extends Component {
   }
 }
 
-export default LingReply;
+function mapStateToProps(state) {
+  return {
+    lings: state.lings,
+  };
+}
+
+export default connect(mapStateToProps)(LingReply);

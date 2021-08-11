@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import Ling from './LingComponent';
-import { LINGS } from './Lings';
+//import { LINGS } from './Lings';
 import { Card, CardHeader, Input } from 'reactstrap';
+import { connect } from "react-redux";
+
 
 class Timeline extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          lings: LINGS,
+          lings: this.props.lings,
           filterLang: "Show All"
       }
   }
+
 
   filterHandler = (e) => {
     //set user changed value to inputVal
@@ -19,7 +22,6 @@ class Timeline extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <>
           <Card className="mb-3">
@@ -42,10 +44,17 @@ class Timeline extends Component {
               
             </CardHeader>
           </Card>
-          <Ling lings={this.state.lings} lang={this.state.filterLang} />
+          <Ling lings={this.state.lings} lang={this.state.filterLang} addLing={this.props.addLing} />
       </>
     );
   }
 }
 
-export default Timeline;
+
+function mapStateToProps(state) {
+  return {
+    lings: state.lings,
+  };
+}
+
+export default connect(mapStateToProps)(Timeline);

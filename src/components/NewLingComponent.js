@@ -3,17 +3,12 @@ import { Label, Row, Button, ModalBody } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 
 import { connect } from "react-redux";
-import { postLing } from './actions/newLingAction'
-import { addLing } from './actions/ActionCreators';
+import { postLing } from './actions/newLingAction';
 
-/*
-const mapDispatchToProps = dispatch => ({
-  onClick: () => dispatch(postLing())
-})
-*/
-
-const mapDispatchToProps = {
-  addLing: (newLingBody, newLingLang) => (addLing(newLingBody, newLingLang)),
+const mapDispatchToProps = (dispatch) => {
+  return {
+  	handleAddLing: (newLingBody, newLingLang, newLingCorPref, id) => dispatch(postLing(newLingBody, newLingLang, newLingCorPref, id)),
+  }
 }
 
 class NewLingComponent extends Component {
@@ -35,12 +30,11 @@ class NewLingComponent extends Component {
   }
 
   handleSubmit(values) {
-    console.log("Current state is: " + JSON.stringify(values));
-    alert("Current state is: " + JSON.stringify(values));
-    postLing(
+    this.props.handleAddLing(
       values.newLingBody,
       values.newLingLang,
-      values.newLingCorPref
+      values.newLingCorPref,
+      this.props.lings.lings.length + 1
     );
   }
 
@@ -122,10 +116,10 @@ class NewLingComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     lings: state.lings,
   };
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewLingComponent);

@@ -7,7 +7,7 @@ import {postLing} from './actions/newLingAction'
 
 class Ling extends Component {
   LingsList() {
-    return this.props.lings.map((ling) => {
+    return this.props.lings.lings.map((ling) => {
       if (this.props.lang === "Show All") {
         return (
           <div key={ling.id}>

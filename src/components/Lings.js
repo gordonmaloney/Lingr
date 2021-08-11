@@ -1,4 +1,4 @@
-export const LINGS = [
+/*export const LINGS = [
     {
         id: 0,
         userIcon: "😎",
@@ -115,3 +115,4 @@ export const LINGS = [
     },
 ];
 
+*/

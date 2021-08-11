@@ -1,9 +1,15 @@
-export const postLing = (ling, lang, cor) => {
+export const postLing = (ling, lang, cor, id) => {
   console.log("You created a new ling. Body = ", ling, " Language = ",  lang, " Correction Preference = ", cor);
   return {
-    type: "NEW_LING",
+    type: "POST_LING",
     payload: {
-      ling,
+        lingBody : ling,
+        id : id,
+        lingLang : lang,
+        lingDate : new Date().toISOString(),
+        userIcon : "😎",
+        userName : "Gordon Maloney",
+        lingRepliesObj : []
     },
   };
 };

@@ -3,6 +3,13 @@ import { Card, CardHeader, CardBody, CardFooter, Button } from "reactstrap";
 //import { LINGS } from "./Lings";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { postReply } from "./actions/newReplyAction";
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleAddReply: () => dispatch(postReply()),
+  };
+};
 
 function ReplyCorrect(lingCorrect) {
   const [reply, correct] = useState("reply");
@@ -89,6 +96,15 @@ function Replies(props) {
 }
 
 class LingReply extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(values) {
+    this.props.handleAddReply(
+    );
+  }
   render() {
     const ling = this.props.lings.lings[this.props.match.params.id];
     return (
@@ -102,14 +118,19 @@ class LingReply extends Component {
           </CardHeader>
           <CardBody>{ling.lingBody}</CardBody>
           <div className="cor-pref-timeline">
-                <center>
-                    Correction preference: <b>{ling.lingCorPref}</b>
-                </center>
-              </div>
+            <center>
+              Correction preference: <b>{ling.lingCorPref}</b>
+            </center>
+          </div>
           <CardFooter>
             <ReplyCorrect content={ling.lingBody} />
             <Link to="/">
-              <Button color="primary" outline>
+              <Button
+                type="submit"
+                onClick={() => this.handleSubmit()}
+                color="primary"
+                outline
+              >
                 Post
               </Button>
             </Link>
@@ -128,4 +149,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(LingReply);
+export default connect(mapStateToProps, mapDispatchToProps)(LingReply);

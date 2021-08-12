@@ -15,6 +15,10 @@ function LingsReducer(
         ...state,
         lings: [...state.lings, {...action.payload}],
       };
+    case ActionTypes.POST_REPLY:
+      return {
+        ...state
+      }
     default:
       console.log(state)
       return state

@@ -17,6 +17,11 @@ class Ling extends Component {
                 </h3>
               </CardHeader>
               <CardBody>{ling.lingBody}</CardBody>
+              <div className="cor-pref-timeline">
+                <center>
+                    Correction preference: <b>{ling.lingCorPref}</b>
+                </center>
+              </div>
               <CardFooter>
                 <Link to={`/reply/${ling.id}`}>
                   {
@@ -61,6 +66,11 @@ class Ling extends Component {
                 </h3>
               </CardHeader>
               <CardBody>{ling.lingBody}</CardBody>
+              <div className="cor-pref-timeline">
+                <center>
+                    Correction preference: <b>{ling.lingCorPref}</b>
+                </center>
+              </div>
               <CardFooter>
                 <Link to={`/reply/${ling.id}`}>
                   {

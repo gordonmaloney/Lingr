@@ -13,11 +13,12 @@
 //make new ling form successfully push a new ling to state
 //fix and invert reply rendering
 //fix date format
+//display correction preference on lings
+
 
 add form validation
 make ling reply work
 create log-in page
-display correction preference on lings
 tidy up ling reply page UX
 migrate profile form to redux
 store profile form data in state, make form update it

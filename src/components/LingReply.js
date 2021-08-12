@@ -91,10 +91,6 @@ function Replies(props) {
 class LingReply extends Component {
   render() {
     const ling = this.props.lings.lings[this.props.match.params.id];
-    console.log(window.location.href)
-    console.log("Should render ling #", this.props.match.params.id)
-    console.log(ling)
-
     return (
       <div key={ling.id}>
         <Card className="ling mb-3">
@@ -105,6 +101,11 @@ class LingReply extends Component {
             </h3>
           </CardHeader>
           <CardBody>{ling.lingBody}</CardBody>
+          <div className="cor-pref-timeline">
+                <center>
+                    Correction preference: <b>{ling.lingCorPref}</b>
+                </center>
+              </div>
           <CardFooter>
             <ReplyCorrect content={ling.lingBody} />
             <Link to="/">

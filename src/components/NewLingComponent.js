@@ -88,7 +88,7 @@ class NewLingComponent extends Component {
                   <option>
                     Relaxed - only correct more significant mistakes
                   </option>
-                  <option>Chill - please don\'t correct me</option>
+                  <option>Chill - please don't correct me</option>
                 </Control.select>
               </Row>
 

@@ -6,6 +6,7 @@ export const lings = [
     lingBody: "Man, hab' ich Hunger! Ich will essen etwas",
     lingDate: "11:24, 15/07/2021",
     lingLang: "German",
+    lingCorPref: "Relaxed - only correct more significant mistakes",
     lingRepliesObj: [
       {
         replyId: 0,
@@ -30,6 +31,7 @@ export const lings = [
     lingBody: "Oh a thì, 's mi a tha fuar!",
     lingDate: "14:52, 15/07/2021",
     lingLang: "Scottish Gaelic",
+    lingCorPref: "Chill - please don't correct me",
     lingRepliesObj: [
       {
         replyId: 0,
@@ -47,6 +49,7 @@ export const lings = [
     lingBody: "Não posso acreditar que a loja não tinha pasteis de nata!!",
     lingDate: "21:04, 18/07/2021",
     lingLang: "Portuguese",
+    lingCorPref: "Chill - please don't correct me",
     lingRepliesObj: [
       {
         replyId: 0,
@@ -76,6 +79,7 @@ export const lings = [
     lingBody: "Vaya que día hoy!",
     lingDate: "11:46, 22/07/2021",
     lingLang: "Spanish",
+    lingCorPref: "Chill - please don't correct me",
     lingRepliesObj: [],
   },
 
@@ -86,6 +90,7 @@ export const lings = [
     lingBody: "Was fur ein schöner Tag!",
     lingDate: "12:31, 25/07/2021",
     lingLang: "German",
+    lingCorPref: "Strict - please correct any error",
     lingRepliesObj: [
       {
         replyId: 0,
@@ -110,6 +115,7 @@ export const lings = [
     lingBody: "Abair latha a th' ann andiugh! 'S mi a tha teth!",
     lingDate: "16:53, 26/07/2021",
     lingLang: "Scottish Gaelic",
+    lingCorPref: "Strict - please correct any error",
     lingRepliesObj: [
       {
         replyId: 0,

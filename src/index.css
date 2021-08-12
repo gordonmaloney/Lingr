@@ -110,3 +110,15 @@ body {
   75%  {transform: rotate(360deg);}
   100% {transform: rotate(360deg);}
 }
+
+.cor-pref-timeline {
+  font-size: small;
+  padding: 3px 10px;
+  background-color: aliceblue;
+  margin-left: auto;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: -10px;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+}

@@ -1,13 +1,13 @@
-export const postReply = () => {
-  console.log("You posted a new reply");
+export const postReply = (values) => {
+  console.log("You posted a new reply: ", values);
   return {
     type: "POST_REPLY",
     payload: {
-      replyId: 50,
+      replyId: "new-id",
       replyAuthor: "reply tester",
       replyType: "correction",
-      correctionBody: "correction test",
-      replyBody: "reply test",
+      correctionBody: values.replyCorrection,
+      replyBody: values.replyReply,
     },
   };
 };

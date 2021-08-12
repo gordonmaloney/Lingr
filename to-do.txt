@@ -14,13 +14,16 @@
 //fix and invert reply rendering
 //fix date format
 //display correction preference on lings
+//create and link up action for POST_REPLY
 
 
+sort out passing through data for replies
+sort out adding replies in the right place
 add form validation
-make ling reply work
+deploy somewhere
+
 create log-in page
 tidy up ling reply page UX
 migrate profile form to redux
 store profile form data in state, make form update it
 make notification page show all replies/corrections to user's lings
-deploy somewhere

@@ -1,19 +1,20 @@
 import React, { Component, useState } from "react";
 import { Card, CardHeader, CardBody, CardFooter, Button } from "reactstrap";
-//import { LINGS } from "./Lings";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { postReply } from "./actions/newReplyAction";
+import { Control, LocalForm } from "react-redux-form";
+import { useDispatch } from "react-redux";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleAddReply: () => dispatch(postReply()),
+    handleAddReply: (values) => dispatch(postReply(values)),
   };
 };
 
 function ReplyCorrect(lingCorrect) {
   const [reply, correct] = useState("reply");
-
+  const dispatch = useDispatch();
   const toggle = () => {
     if (reply === "reply") {
       return correct("correct");
@@ -21,37 +22,68 @@ function ReplyCorrect(lingCorrect) {
     correct("reply");
   };
 
+
+
+  const handleSubmit = (values) => {
+    dispatch(postReply(values));
+}
+
+
   return (
     <>
       <div>
-        <Button
-          className={reply === "correct" ? "hide" : "show"}
-          onClick={() => toggle()}
-        >
-          Add Correction
-        </Button>
-        <div className={reply === "correct" ? "show" : "hide"}>
-          <Button onClick={() => toggle()}>Cancel Correction</Button>
+        <LocalForm onSubmit={(values) => handleSubmit(values)}>
+          <Button
+            className={reply === "correct" ? "hide" : "show"}
+            onClick={() => toggle()}
+          >
+            Add Correction
+          </Button>
+          <div className={reply === "correct" ? "show" : "hide"}>
+            <Button onClick={() => toggle()}>Cancel Correction</Button>
 
-          <span className="d-inline">
-            {" "}
-            <i>
-              Protip: Make corrections in CAPITALS so folk can see where they
-              went wrong
-            </i>
-          </span>
+            <span className="d-inline">
+              {" "}
+              <i>
+                Protip: Make corrections in CAPITALS so folk can see where they
+                went wrong
+              </i>
+            </span>
 
-          <input
-            className="ling-reply my-2"
-            type="text"
-            defaultValue={lingCorrect.content}
-          />
-        </div>
-        <input
-          className="ling-reply my-2"
-          type="text"
-          placeholder="Type your reply here..."
-        />
+            <Control.text
+                model=".parentId"
+                id="parentId"
+                name="parentId"
+                defaultValue={lingCorrect.id}
+                className="hide"
+                />
+
+            <Control.textarea
+                  model=".replyCorrection"
+                  id="replyCorrection"
+                  name="replyCorrection"
+                  defaultValue={lingCorrect.content}
+                  className="mb-1 mt-3 form-control"
+                  rows="2"
+                />
+
+          </div>
+          <Control.textarea
+                  model=".replyReply"
+                  id="replyReply"
+                  name="replyReply"
+                  placeholder="Type your reply here..."
+                  className="mb-3 mt-3 form-control"
+                  rows="2"
+                />
+              <Button
+                type="submit"
+                color="primary"
+                outline
+              >
+                Post
+              </Button>
+        </LocalForm>
       </div>
     </>
   );
@@ -98,13 +130,8 @@ function Replies(props) {
 class LingReply extends Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  handleSubmit(values) {
-    this.props.handleAddReply(
-    );
-  }
+  
   render() {
     const ling = this.props.lings.lings[this.props.match.params.id];
     return (
@@ -123,17 +150,7 @@ class LingReply extends Component {
             </center>
           </div>
           <CardFooter>
-            <ReplyCorrect content={ling.lingBody} />
-            <Link to="/">
-              <Button
-                type="submit"
-                onClick={() => this.handleSubmit()}
-                color="primary"
-                outline
-              >
-                Post
-              </Button>
-            </Link>
+            <ReplyCorrect content={ling.lingBody} id={ling.id} />
           </CardFooter>
         </Card>
 

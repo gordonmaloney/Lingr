@@ -7,21 +7,23 @@ function LingsReducer(
   },
   action
 ) {
-  console.log(action)
+  console.log(action);
 
   switch (action.type) {
     case ActionTypes.POST_LING:
       return {
         ...state,
-        lings: [...state.lings, {...action.payload}],
+        lings: [...state.lings, { ...action.payload }],
       };
     case ActionTypes.POST_REPLY:
+      console.log(...state.lings[5].lingRepliesObj);
+      console.log(action.payload);
       return {
-        ...state
-      }
+        ...state,
+        lings: [...state.lings[5].lingRepliesObj, {...action.payload}],
+      };
     default:
-      console.log(state)
-      return state
+      return state;
   }
 }
 

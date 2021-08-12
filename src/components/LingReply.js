@@ -26,7 +26,13 @@ function ReplyCorrect(lingCorrect) {
         <div className={reply === "correct" ? "show" : "hide"}>
           <Button onClick={() => toggle()}>Cancel Correction</Button>
 
-          <span className="d-inline"> <i>Protip: Make corrections in CAPITALS so folk can see where they went wrong</i></span>
+          <span className="d-inline">
+            {" "}
+            <i>
+              Protip: Make corrections in CAPITALS so folk can see where they
+              went wrong
+            </i>
+          </span>
 
           <input
             className="ling-reply my-2"
@@ -85,6 +91,10 @@ function Replies(props) {
 class LingReply extends Component {
   render() {
     const ling = this.props.lings.lings[this.props.match.params.id];
+    console.log(window.location.href)
+    console.log("Should render ling #", this.props.match.params.id)
+    console.log(ling)
+
     return (
       <div key={ling.id}>
         <Card className="ling mb-3">

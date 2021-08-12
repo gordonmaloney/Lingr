@@ -14,10 +14,7 @@ class Timeline extends Component {
       }
   }
 
-
   filterHandler = (e) => {
-    //set user changed value to inputVal
-    console.log(e.target.value);
     this.setState({filterLang: e.target.value})
   }
 

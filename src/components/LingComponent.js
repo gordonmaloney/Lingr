@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Card, CardHeader, CardBody, CardFooter } from "reactstrap";
 import { Link } from "react-router-dom";
-import {postLing} from './actions/newLingAction'
 
 class Ling extends Component {
   LingsList() {
@@ -111,8 +109,4 @@ function mapStateToProps(state) {
   };
 }
 
-function matchDispatchToProps(dispatch){
-  return bindActionCreators({postLing: postLing}, dispatch)
-}
-
-export default connect(mapStateToProps, matchDispatchToProps)(Ling);
+export default connect(mapStateToProps)(Ling);

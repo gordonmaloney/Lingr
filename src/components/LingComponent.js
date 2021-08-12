@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class Ling extends Component {
   LingsList() {
-    return this.props.lings.lings.map((ling) => {
+    return this.props.lings.lings.reverse().map((ling) => {
       if (this.props.lang === "Show All") {
         return (
           <div key={ling.id}>

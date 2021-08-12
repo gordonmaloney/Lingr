@@ -6,7 +6,7 @@ export const postLing = (ling, lang, cor, id) => {
         lingBody : ling,
         id : id,
         lingLang : lang,
-        lingDate : new Date().toISOString(),
+        lingDate : (new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ", " + new Date().toLocaleDateString()),
         userIcon : "😎",
         userName : "Gordon Maloney",
         lingRepliesObj : []

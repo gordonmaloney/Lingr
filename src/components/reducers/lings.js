@@ -13,7 +13,7 @@ function LingsReducer(
     case ActionTypes.POST_LING:
       return {
         ...state,
-        lings: [{...action.payload}, ...state.lings],
+        lings: [...state.lings, {...action.payload}],
       };
     default:
       console.log(state)

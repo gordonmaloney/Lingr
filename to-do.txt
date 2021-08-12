@@ -10,9 +10,9 @@
 //footer links
 //technical details in about page in a collapse
 //make loading graphic - <div className="loader">🤔</div>
-
-
-make new ling form successfully push a new ling to state
+//make new ling form successfully push a new ling to state
+//fix and invert reply rendering
+//fix date format
 
 add form validation
 make ling reply work

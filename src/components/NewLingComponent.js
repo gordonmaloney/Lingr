@@ -34,7 +34,7 @@ class NewLingComponent extends Component {
       values.newLingBody,
       values.newLingLang,
       values.newLingCorPref,
-      this.props.lings.lings.length + 1
+      this.props.lings.lings.length
     );
   }
 

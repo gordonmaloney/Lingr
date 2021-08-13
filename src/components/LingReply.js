@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import { Card, CardHeader, CardBody, CardFooter, Button } from "reactstrap";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { postReply } from "./actions/newReplyAction";
 import { Control, LocalForm } from "react-redux-form";

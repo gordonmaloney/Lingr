@@ -20,7 +20,7 @@ function LingsReducer(
       console.log(action.payload);
       return {
         ...state,
-        lings: [...state.lings[5].lingRepliesObj, {...action.payload}],
+        //lings: [...state.lings[5].lingRepliesObj, {...action.payload}],
       };
     default:
       return state;

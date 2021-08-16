@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Card, CardHeader, CardBody, CardFooter } from "reactstrap";
 import { Link } from "react-router-dom";
+import { actions, Control } from 'react-redux-form';
+
+
+
 
 class Ling extends Component {
   LingsList() {
@@ -25,19 +29,22 @@ class Ling extends Component {
               <CardFooter>
                 <Link to={`/reply/${ling.id}`}>
                   {
-                    ling.lingRepliesObj.filter(
-                      (reply) => reply.replyType === "reply"
-                    ).length
+                    this.props.lings.replies.filter(
+                      (reply) => reply.parentId === ling.id).filter(
+                        (reply) => reply.replyType === "reply"
+                      ).length
                   }{" "}
+
                   Replies
                 </Link>{" "}
                 |
                 <Link to={`/reply/${ling.id}`}>
                   {" "}
                   {
-                    ling.lingRepliesObj.filter(
-                      (reply) => reply.replyType === "correction"
-                    ).length
+                    this.props.lings.replies.filter(
+                      (reply) => reply.parentId === ling.id).filter(
+                        (reply) => reply.replyType === "correction"
+                      ).length
                   }{" "}
                   Corrections
                 </Link>
@@ -46,7 +53,7 @@ class Ling extends Component {
               <CardBody className="ling-reply">
                 <Link to={`/reply/${ling.id}`}>
                   <input
-                    className="ling-reply"
+                    className="ling-reply-text"
                     type="text"
                     placeholder="Type your reply or correction here..."
                   />
@@ -118,5 +125,6 @@ function mapStateToProps(state) {
     lings: state.lings,
   };
 }
+
 
 export default connect(mapStateToProps)(Ling);

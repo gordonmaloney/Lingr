@@ -16,7 +16,7 @@ export const lings = [
         replyBody: "oje! Dann sollst du was mal essen!",
       },
       {
-        replyId: 0,
+        replyId: 1,
         replyAuthor: "Kirsty Haigh",
         replyType: "correction",
         correctionBody: "ich will etwas essen",

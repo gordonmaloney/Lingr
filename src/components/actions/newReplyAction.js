@@ -3,9 +3,10 @@ export const postReply = (values) => {
   return {
     type: "POST_REPLY",
     payload: {
+      parentId: values.parentId,
       replyId: "new-id",
-      replyAuthor: "reply tester",
-      replyType: "correction",
+      replyAuthor: "Gordon Maloney",
+      replyType: values.replyType,
       correctionBody: values.replyCorrection,
       replyBody: values.replyReply,
     },

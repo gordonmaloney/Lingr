@@ -15,11 +15,13 @@
 //fix date format
 //display correction preference on lings
 //create and link up action for POST_REPLY
+//form validation for new ling
+//migrate replies to separate reducer and file
+//sort out passing through data for replies
+//sort out adding replies in the right place
+//make form reset
 
-
-sort out passing through data for replies
-sort out adding replies in the right place
-add form validation
+add form validation to reply
 deploy somewhere
 
 create log-in page

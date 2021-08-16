@@ -102,7 +102,9 @@ body {
   font-size: xx-large;
   text-align: center;
   animation: loadspin 2s infinite;
-  width: auto;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @keyframes loadspin {
@@ -110,6 +112,14 @@ body {
   75%  {transform: rotate(360deg);}
   100% {transform: rotate(360deg);}
 }
+
+
+.ling-reply-text {
+  width: 100%;
+  padding-left: 8px;
+  height: 50px;
+}
+
 
 .cor-pref-timeline {
   font-size: small;

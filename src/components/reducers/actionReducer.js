@@ -1,4 +1,4 @@
-import * as ActionTypes from "../actions/ActionTypes";
+/*import * as ActionTypes from "../actions/ActionTypes";
 
 const addLingReduced = (state, action) => {
     switch (action.type){
@@ -6,4 +6,4 @@ const addLingReduced = (state, action) => {
     }
 }
 
-export default addLingReduced
+export default addLingReduced*/

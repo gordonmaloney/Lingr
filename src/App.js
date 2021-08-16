@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import About from "./components/About";
 
 
+
 function App() {
   return (
     <>
@@ -32,7 +33,7 @@ function App() {
                 <Route exact path="/profile">
                   <Profile />
                 </Route>
-                <Route path="/reply/:id" component={LingReply} />
+                <Route path="/reply/:id" component={LingReply} XXX />
                 <Route path="/about">
                   {" "}
                   <About />{" "}

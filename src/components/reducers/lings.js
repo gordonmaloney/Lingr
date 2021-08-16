@@ -1,9 +1,11 @@
 import * as ActionTypes from "../actions/ActionTypes";
 import { lings } from "../../mocks/lings";
+import { replies } from '../../mocks/replies'
 
 function LingsReducer(
   state = {
     lings,
+    replies
   },
   action
 ) {
@@ -16,11 +18,9 @@ function LingsReducer(
         lings: [...state.lings, { ...action.payload }],
       };
     case ActionTypes.POST_REPLY:
-      console.log(...state.lings[5].lingRepliesObj);
-      console.log(action.payload);
       return {
         ...state,
-        //lings: [...state.lings[5].lingRepliesObj, {...action.payload}],
+        replies: [{...action.payload}, ...state.replies],
       };
     default:
       return state;

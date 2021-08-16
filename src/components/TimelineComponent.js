@@ -9,6 +9,7 @@ class Timeline extends Component {
     super(props);
     this.state = {
       lings: this.props.lings,
+      replies: this.props.replies,
       filterLang: "Show All",
     };
   }
@@ -38,12 +39,14 @@ class Timeline extends Component {
             </Input>
           </CardHeader>
         </Card>
-
         <Ling
           lings={this.state.lings}
+          replies={this.state.lings.replies}
           lang={this.state.filterLang}
           addLing={this.props.addLing}
         />
+                <div className="loader">🤔</div>
+
       </>
     );
   }

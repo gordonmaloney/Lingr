@@ -165,6 +165,21 @@ body {
 }
 
 .reply-notif:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1))
+  transform: scale(1.005);
+  filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.1))
+}
+
+.timeline-no-link {
+  text-decoration: none;
+  color:inherit;
+}
+
+.timeline-no-link:hover {
+  text-decoration: none;
+  color:inherit;
+}
+
+.timeline-hover:hover {
+  transform: scale(1.005);
+  filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.1))
 }

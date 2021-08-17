@@ -153,3 +153,13 @@ body {
   opacity: 0;
   transition: 200ms ease-in;
 }
+
+.reply-no-link {
+  text-decorations:none;
+  color:inherit;
+}
+
+.reply-no-link:hover {
+  text-decorations:none;
+  color:inherit;
+}

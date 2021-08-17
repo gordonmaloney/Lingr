@@ -20,10 +20,18 @@
 //sort out passing through data for replies
 //sort out adding replies in the right place
 //make form reset
+//deploy somewhere
+//Notifications
 
-add form validation to reply
-deploy somewhere
 
+"Posted" pop-ups
+Form validation on replies
+Accountless posting
+Incorporate thunk
+Migrate to json server
+Fix menu display on mobile (remove gutter?)
+Accounts???
+Incorporate translation tool
 create log-in page
 tidy up ling reply page UX
 migrate profile form to redux

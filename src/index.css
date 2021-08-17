@@ -155,11 +155,16 @@ body {
 }
 
 .reply-no-link {
-  text-decorations:none;
+  /*text-decoration: none;*/
   color:inherit;
 }
 
 .reply-no-link:hover {
-  text-decorations:none;
+  /*text-decoration: none;*/
   color:inherit;
+}
+
+.reply-notif:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1))
 }

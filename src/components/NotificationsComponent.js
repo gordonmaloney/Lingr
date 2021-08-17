@@ -23,7 +23,7 @@ class Notifications extends Component {
             if (reply.replyType === "correction") {
               return (
                 <Link to={`/reply/${ling.id}`} className="reply-no-link">
-                  <div key={reply.replyId}>
+                  <div key={reply.replyId} className="reply-notif">
                     <Card className="reply-ling ml-0">
                       <CardHeader className="pb-1">
                         <h5>{reply.replyAuthor} corrected you 🤓</h5>
@@ -48,7 +48,7 @@ class Notifications extends Component {
             } else {
               return (
                 <Link to={`/reply/${ling.id}`} className="reply-no-link">
-                  <div key={reply.replyId}>
+                  <div key={reply.replyId} className="reply-notif">
                     <Card className="reply-ling ml-0">
                       <CardHeader className="pb-1">
                         <h5>{reply.replyAuthor} replied to you 👍</h5>

@@ -22,10 +22,10 @@
 //make form reset
 //deploy somewhere
 //Notifications
+//Form validation on replies
+//"Posted" pop-ups
 
 
-"Posted" pop-ups
-Form validation on replies
 Accountless posting
 Incorporate thunk
 Migrate to json server

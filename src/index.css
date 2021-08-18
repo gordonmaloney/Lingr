@@ -27,13 +27,20 @@
 }
 
 .show {
-  display: block inline
+  display: block inline;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans&display=swap");
 
-h1, h2, h3, h4, h5, .card, Button, body {
-  font-family: 'Fira Sans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+.card,
+Button,
+body {
+  font-family: "Fira Sans", sans-serif;
 }
 
 .reply-ling {
@@ -42,7 +49,7 @@ h1, h2, h3, h4, h5, .card, Button, body {
 }
 
 body {
-  background-image: url('images/so-white.png');
+  background-image: url("images/so-white.png");
 }
 
 .footer {
@@ -62,14 +69,13 @@ body {
   margin-right: -15px;
   margin-top: -15px;
   color: white;
-
 }
 
-.correction:after{
+.correction:after {
   text-align: center;
   font-size: larger;
   font-weight: 800;
-  content: '!';
+  content: "!";
   margin-left: 7.5px;
   line-height: 0%;
 }
@@ -108,18 +114,22 @@ body {
 }
 
 @keyframes loadspin {
-  0%   {transform: rotate(0deg);}
-  75%  {transform: rotate(360deg);}
-  100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 .ling-reply-text {
   width: 100%;
   padding-left: 8px;
   height: 50px;
 }
-
 
 .cor-pref-timeline {
   font-size: small;
@@ -132,7 +142,6 @@ body {
   border: 1px solid lightblue;
   border-radius: 10px;
 }
-
 
 .page-enter {
   opacity: 0;
@@ -156,30 +165,57 @@ body {
 
 .reply-no-link {
   /*text-decoration: none;*/
-  color:inherit;
+  color: inherit;
 }
 
 .reply-no-link:hover {
   /*text-decoration: none;*/
-  color:inherit;
+  color: inherit;
 }
 
 .reply-notif:hover {
   transform: scale(1.005);
-  filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.1))
+  filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.1));
 }
 
 .timeline-no-link {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 
 .timeline-no-link:hover {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 
 .timeline-hover:hover {
   transform: scale(1.005);
-  filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.1))
+  filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.1));
+}
+
+.success-msg {
+  position: absolute;
+  right: 10%;
+  z-index: 5;
+  background-color: mintcream;
+  border: 1px solid grey;
+  padding: 10px 20px;
+  border-radius: 3px;
+  animation-name: success-msg-vanish;
+  animation-duration: 4s;
+  opacity: 0
+}
+
+@keyframes success-msg-vanish {
+  0% {
+    bottom: 15%;
+    opacity: 100%;
+  }
+  20% {
+    bottom: 15%;
+  }
+  100% {
+    bottom: -15%;
+    opacity: 0;
+  }
 }

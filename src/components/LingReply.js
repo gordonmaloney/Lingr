@@ -3,8 +3,12 @@ import { Card, CardHeader, CardBody, CardFooter, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { postReply } from "./actions/newReplyAction";
-import { Control, LocalForm } from "react-redux-form";
+import { Control, LocalForm, Errors } from "react-redux-form";
 import { useDispatch } from "react-redux";
+import MessagePosted from "./message-posted";
+
+const required = (val) => val && val.length;
+const minLength = (len) => (val) => val && val.length >= len;
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -14,6 +18,7 @@ const mapDispatchToProps = (dispatch) => {
 
 function ReplyCorrect(lingCorrect) {
   const [reply, correct] = useState("reply");
+  const [successMsg, correctSuccessMsg] = useState("notPosted");
   const dispatch = useDispatch();
   const toggle = () => {
     if (reply === "reply") {
@@ -22,15 +27,20 @@ function ReplyCorrect(lingCorrect) {
     correct("reply");
   };
 
+  const toggleSuccessMsg = () => {
+    return correctSuccessMsg("Posted");
+  };
+
   const handleSubmit = (values) => {
     document.getElementById("replyReply").value = "";
-    document.getElementById("replyReply").placeholder = "Type your reply here...";
+    document.getElementById("replyReply").placeholder =
+      "Type your reply here...";
     document.getElementById("replyCorrection").value = lingCorrect.content;
-    document.getElementById("replyCorrection").placeholder = lingCorrect.content;
+    document.getElementById("replyCorrection").placeholder =
+      lingCorrect.content;
     correct("reply");
-
-
     dispatch(postReply(values));
+    toggleSuccessMsg();
   };
 
   const ReplyTypeButton = () => {
@@ -101,14 +111,32 @@ function ReplyCorrect(lingCorrect) {
             placeholder="Type your reply here..."
             className="mb-3 mt-3 form-control"
             rows="2"
+            validators={{
+              required,
+              minLength: minLength(10),
+            }}
+          />
+          <Errors
+            className="text-danger"
+            model=".replyReply"
+            show="touched"
+            component="div"
+            messages={{
+              required: "",
+              minLength: "Must be at least 10 characters",
+            }}
           />
 
           <ReplyTypeButton />
-            <Button type="submit" color="primary" outline>
-              Post
-            </Button>
+          <Button type="submit" color="primary" outline>
+            Post
+          </Button>
         </LocalForm>
       </div>
+
+      {console.log(successMsg)}
+
+      {successMsg === "notPosted" ? " " : <MessagePosted message="Reply" />}
     </>
   );
 }
@@ -116,12 +144,15 @@ function ReplyCorrect(lingCorrect) {
 function Replies(props) {
   const LingReplies = props.replies.map((reply) => {
     if (reply.parentId === props.ling.id) {
-      if (reply.replyType === "correction") {
+      if (
+        reply.replyType === "correction" &&
+        reply.correctionBody !== props.ling.lingBody
+      ) {
         return (
-          <div key={reply.replyId}>
+          <div key={reply.replyId} className="timeline-hover">
             <Card className="mb-3 reply-ling">
               <CardBody>
-                <div className={reply.replyType} />
+                <div className="correction" />
                 <p className="ml-3 mb-3 correction-body">
                   <i>{reply.correctionBody}</i>
                 </p>
@@ -135,10 +166,10 @@ function Replies(props) {
         );
       } else {
         return (
-          <div key={reply.replyId}>
+          <div key={reply.replyId} className="timeline-hover">
             <Card className="mb-3 reply-ling">
               <CardBody>
-                <div className={reply.replyType} />
+                <div className="reply" />
                 {reply.replyBody}
               </CardBody>
               <CardFooter className="text-right replySignOff">
